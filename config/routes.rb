@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     passwords:     'users/passwords',
     registrations: 'users/registrations'
   }
-
+  devise_scope :user do
+    get 'users/:id/edit' => 'users/registrations#edit', as: :edit_user_id_registration
+    match 'users/:id', to: 'users/registrations#update', via: [:patch, :put], as: :user_id_registration
+  end
   root to: "home#index"
 end
