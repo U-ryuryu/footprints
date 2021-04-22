@@ -35,9 +35,9 @@
 | name             | string     | null: false                    |
 | tel              | string     | null: false                    |
 | postal_code      | string     | null: false                    |
-| address          | integer    | null: false                    |
-| charge           | integer    |                                |
-| charge_tel       | integer    |                                |
+| address          | string     | null: false                    |
+| charge           | string     |                                |
+| charge_tel       | string     |                                |
 | admin            | references | null: false, foreign_key: true |
 
 ### Association

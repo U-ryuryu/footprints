@@ -16,4 +16,5 @@ Rails.application.routes.draw do
     delete 'users/:id' => 'users/registrations#destroy', as: :user_delete_registration
   end
   root to: "home#index"
+  resources :clients
 end
