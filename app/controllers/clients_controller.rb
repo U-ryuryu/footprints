@@ -1,11 +1,14 @@
 class ClientsController < ApplicationController
-  before_action :redirect_user, only: [:edit,:update,:destroy]
+  before_action :redirect_user, only: [:show,:edit,:update,:destroy]
   def index
     if admin_signed_in?
       @client = Client.where(admin_id: current_admin.id)
     elsif user_signed_in?
       @client = Client.where(admin_id: current_user.admin.id)
     end
+  end
+
+  def show
   end
 
   def new
@@ -26,7 +29,7 @@ class ClientsController < ApplicationController
 
   def update
     if @client.update(client_params)
-      redirect_to root_path
+      redirect_to client_path(@client.id)
     else
       render :edit
     end

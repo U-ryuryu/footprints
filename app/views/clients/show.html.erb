@@ -1,0 +1,9 @@
+<% "#{@client.name}詳細ページ" %><br>
+会社名：<%= @client.name %><br>
+電話番号：<%= @client.tel %><br>
+郵便番号：<%= @client.postal_code %><br>
+住所：<%= @client.address %><br>
+<%= "担当者：#{@client.charge}" unless @client.charge == "" %><br>
+<%= "担当者電話番号：#{@client.charge_tel}" unless @client.charge_tel == "" %><br>
+
+<%= link_to "客先情報編集", edit_client_path(@client.id) %><%=link_to 'もどる', root_path %>
