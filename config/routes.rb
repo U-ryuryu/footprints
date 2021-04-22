@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'home/index'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:      'admins/passwords',
@@ -15,6 +14,6 @@ Rails.application.routes.draw do
     match 'users/:id', to: 'users/registrations#update', via: [:patch, :put], as: :user_id_registration
     delete 'users/:id' => 'users/registrations#destroy', as: :user_delete_registration
   end
-  root to: "home#index"
+  root to: "clients#index"
   resources :clients
 end
