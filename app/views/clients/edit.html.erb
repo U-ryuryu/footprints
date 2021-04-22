@@ -14,3 +14,7 @@
 <br>
 <%= f.submit "客先情報変更" %><%=link_to 'もどる', root_path %>
 <% end %>
+
+<% unless user_signed_in? %>
+  <%= button_to "削除", client_path(@client.id), data: { confirm: "本当に削除しますか?" }, method: :delete %>
+<% end %>
