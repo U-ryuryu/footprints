@@ -2,7 +2,6 @@
 
 class Users::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
-  prepend_before_action :authenticate_scope!, only: [:destroy]
   before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
@@ -25,32 +24,19 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # GET /resource/edit
   def edit
-    if admin_signed_in?
-      if current_admin.id == User.find(params[:id]).admin.id
-        self.resource = resource_class.to_adapter.get!(params[:id])
-      else
-        redirect_to root_path
-      end
-    else
-      authenticate_scope!
-+      super
+    if user_signed_in?
+      authenticate_scope_user!
+      super
     end
   end
 
   # PUT /resource
   def update
-    if admin_signed_in?
-      if current_admin.id == User.find(params[:id]).admin.id
-        self.resource = resource_class.to_adapter.get!(params[:id])
-      else
-        redirect_to root_path
-      end
-    else
+    if user_signed_in?
       self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
     end
 
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
-
     resource_updated = update_resource(resource, account_update_params)
     if admin_signed_in?
       if current_admin.id == User.find(params[:id]).admin.id
@@ -74,9 +60,15 @@ class Users::RegistrationsController < Devise::RegistrationsController
   end
 
   # DELETE /resource
-  # def destroy
-  #   super
-  # end
+  def destroy
+    if user_signed_in?
+      redirect_to root_path and return
+    end
+    resource.destroy
+    set_flash_message! :notice, :destroyed
+    yield resource if block_given?
+    respond_with_navigational(resource){ redirect_to root_path }
+  end
 
   # GET /resource/cancel
   # Forces the session data which is usually expired after sign
@@ -106,6 +98,21 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
+  end
+
+  def authenticate_scope!
+    if admin_signed_in?
+      if current_admin.id == User.find(params[:id]).admin.id
+        self.resource = resource_class.to_adapter.get!(params[:id])
+      else
+        redirect_to root_path
+      end
+    end
+  end
+
+  def authenticate_scope_user!
+    send(:"authenticate_#{resource_name}!", force: true)
+    self.resource = send(:"current_#{resource_name}")
   end
 
   # The path used after sign up.
