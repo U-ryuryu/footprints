@@ -50,6 +50,7 @@ test:
 #
 production:
   <<: *default
-  database: footprints_production
-  username: footprints
+  database: <%= ENV['FOOTPRINTS_DATABASE'] %>
+  username: <%= ENV['FOOTPRINTS_DATABASE_USERNAME'] %>
   password: <%= ENV['FOOTPRINTS_DATABASE_PASSWORD'] %>
+  host: <%= ENV['FOOTPRINTS_DATABASE_HOST'] %>
