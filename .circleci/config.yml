@@ -46,6 +46,7 @@ jobs:
       - setup_remote_docker:
           version: 19.03.13
       - heroku/install
+      - ruby/install-deps
       - run:
           name: heroku login
           command: heroku container:login  
