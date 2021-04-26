@@ -48,10 +48,7 @@ jobs:
       - heroku/install
       - run:
           name: heroku login
-          command: heroku container:login
-      - run:
-          name: Build assets
-          command: heroku run bundle exec rails assets:precompile    
+          command: heroku container:login  
       - run:
           name: push docker image
           command: heroku container:push web -a $HEROKU_APP_NAME
