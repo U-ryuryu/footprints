@@ -50,6 +50,9 @@ jobs:
           name: heroku login
           command: heroku container:login
       - run:
+          name: Build assets
+          command: heroku run bundle exec rails assets:precompile    
+      - run:
           name: push docker image
           command: heroku container:push web -a $HEROKU_APP_NAME
       - run:
@@ -58,9 +61,6 @@ jobs:
       - run:
           name: database setup
           command: heroku run bundle exec rake db:migrate RAILS_ENV=production -a $HEROKU_APP_NAME
-      - run: 
-          name: bundle exec bin/webpack
-          command: bundle exec bin/webpack
 
     
 workflows:
