@@ -18,6 +18,7 @@ ADD ./Gemfile.lock $APP_ROOT/Gemfile.lock
 
 RUN gem install bundler 
 RUN bundle install
+RUN yarn install
 ADD . $APP_ROOT
 
 COPY start.sh /start.sh
