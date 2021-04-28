@@ -52,7 +52,7 @@
 | ---------------- | ---------- | ------------------------------ |
 | title            | string     | null: false                    |
 | content          | string     | null: false                    |
-| status_id        | string     | null: false                    |
+| status_id        | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | client           | references | null: false, foreign_key: true |
 
