@@ -12,3 +12,5 @@
 
 <%= f.submit "訪問情報変更" %><%=link_to 'もどる', :back %>
 <% end %>
+
+<%= button_to "削除", client_visit_path(@visit.id), data: { confirm: "本当に削除しますか?" }, method: :delete %>

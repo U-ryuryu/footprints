@@ -16,6 +16,6 @@ Rails.application.routes.draw do
   end
   root to: "clients#index"
   resources :clients do
-    resources :visits
+    resources :visits, expect: :index
   end
 end

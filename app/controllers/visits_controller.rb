@@ -1,5 +1,7 @@
 class VisitsController < ApplicationController
-  before_action :redirect_user, only: [:new,:create]
+  before_action :redirect_user
+  before_action :redirect_admin, only: [:new, :create, :edit, :update, :destroy]
+  before_action :redirect_current_user, only: [:edit, :update, :destroy]
   def new
     @visit = Visit.new
   end
@@ -14,20 +16,23 @@ class VisitsController < ApplicationController
   end
 
   def show
-    @visit = Visit.find(params[:client_id])
+    @visit = Visit.find(params[:id])
   end
 
   def edit
-    @visit = Visit.find(params[:client_id])
   end
 
   def update
-    @visit = Visit.find(params[:client_id])
     if @visit.update(visit_params)
-      redirect_to client_visit_path(@visit.id)
+      redirect_to client_visit_path
     else
       render :edit
     end
+  end
+
+  def destroy
+    @visit.delete
+    redirect_to client_path(params[:client_id])
   end
 
   private
@@ -37,9 +42,21 @@ class VisitsController < ApplicationController
   end
 
   def redirect_user
-    redirect_to root_path and return unless user_signed_in?
-    if current_user.admin.id != Client.find(params[:client_id]).admin.id
-      redirect_to  root_path
+    if admin_signed_in?
+      redirect_to root_path and return unless current_admin.id == Client.find(params[:client_id]).admin.id
+    elsif user_signed_in?
+      redirect_to root_path and return unless current_user.admin.id == Client.find(params[:client_id]).admin.id
+    else
+      redirect_to root_path
     end
+  end
+
+  def redirect_admin
+    redirect_to root_path and return unless user_signed_in?
+  end
+
+  def redirect_current_user
+    @visit = Visit.find(params[:id])
+    redirect_to root_path if current_user.id != @visit.user_id
   end
 end
