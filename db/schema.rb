@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_04_28_091901) do
 
   create_table "visits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title", null: false
+    t.date "date", null: false
     t.string "content", null: false
     t.integer "status_id", null: false
     t.bigint "user_id"

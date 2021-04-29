@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
   end
 
   def show
+    @visit = Visit.where(client_id: @client.id)
   end
 
   def new

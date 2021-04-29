@@ -12,7 +12,7 @@
 <br>
 <%= f.text_field :charge_tel, placeholder:"担当者電話番号" %>
 <br>
-<%= f.submit "客先情報変更" %><%=link_to 'もどる', root_path %>
+<%= f.submit "客先情報変更" %><%=link_to 'もどる', :back %>
 <% end %>
 
 <% unless user_signed_in? %>

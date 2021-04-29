@@ -6,4 +6,10 @@
 <%= "担当者：#{@client.charge}" unless @client.charge == "" %><br>
 <%= "担当者電話番号：#{@client.charge_tel}" unless @client.charge_tel == "" %><br>
 
-<%= link_to "客先情報編集", edit_client_path(@client.id) %><%=link_to 'もどる', root_path %>
+<%= link_to "客先情報編集", edit_client_path(@client.id) %>
+<%= link_to "訪問情報追加", new_client_visit_path(@client.id) %>
+
+<% @visit.each do |visit| %>
+  <br><%= link_to visit.title, "#" %>
+<% end %>
+<br><%=link_to 'もどる', root_path %>
