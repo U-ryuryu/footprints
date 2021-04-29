@@ -1,0 +1,13 @@
+<%= form_with model: @visit, url: client_visits_path, local: true do |f| %>
+<br>
+<%= f.text_field :title, placeholder:"タイトル" %>
+<br>
+<%= f.text_field :date, placeholder:"訪問日" %>
+<br>
+<%= f.text_area :content, placeholder:"作業内容" %>
+<br>
+<%= f.collection_select(:status_id, Status.all, :id, :name, {}) %>
+<br>
+
+<%= f.submit "訪問情報登録" %><%=link_to 'もどる', :back %>
+<% end %>
