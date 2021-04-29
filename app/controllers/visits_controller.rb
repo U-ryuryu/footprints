@@ -17,6 +17,19 @@ class VisitsController < ApplicationController
     @visit = Visit.find(params[:client_id])
   end
 
+  def edit
+    @visit = Visit.find(params[:client_id])
+  end
+
+  def update
+    @visit = Visit.find(params[:client_id])
+    if @visit.update(visit_params)
+      redirect_to client_visit_path(@visit.id)
+    else
+      render :edit
+    end
+  end
+
   private
 
   def visit_params

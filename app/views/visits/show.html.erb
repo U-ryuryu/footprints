@@ -4,4 +4,5 @@
 訪問内容：<%= @visit.content %><br>
 状況：<%= Status.find(@visit.status_id).name %><br>
 
-<br><%=link_to 'もどる', :back %>
+<%= link_to "訪問情報編集", edit_client_visit_path(@visit.id) %>
+<br><%=link_to 'もどる', client_path(params[:client_id]) %>
