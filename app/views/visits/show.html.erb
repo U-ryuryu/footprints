@@ -1,0 +1,7 @@
+<h1>訪問情報詳細ページ</h1>
+タイトル：<%= @visit.title %><br>
+訪問日：<%= @visit.date %><br>
+訪問内容：<%= @visit.content %><br>
+状況：<%= Status.find(@visit.status_id).name %><br>
+
+<br><%=link_to 'もどる', :back %>

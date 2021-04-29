@@ -13,6 +13,10 @@ class VisitsController < ApplicationController
     end
   end
 
+  def show
+    @visit = Visit.find(params[:client_id])
+  end
+
   private
 
   def visit_params

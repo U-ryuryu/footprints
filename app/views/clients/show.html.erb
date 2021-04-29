@@ -10,6 +10,6 @@
 <%= link_to "訪問情報追加", new_client_visit_path(@client.id) %>
 
 <% @visit.each do |visit| %>
-  <br><%= link_to visit.title, "#" %>
+  <br><%= link_to visit.title, client_visit_path(visit.id) %>
 <% end %>
 <br><%=link_to 'もどる', root_path %>
