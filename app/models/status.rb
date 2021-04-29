@@ -8,4 +8,5 @@ class Status < ActiveHash::Base
   ]
   include ActiveHash::Associations
   has_many :visits
+  has_many :calls
 end
