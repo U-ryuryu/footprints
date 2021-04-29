@@ -9,7 +9,7 @@ class VisitsController < ApplicationController
   def create
     @visit = Visit.new(visit_params)
     if @visit.save
-      redirect_to root_path
+      redirect_to client_path(params[:client_id])
     else
       render :new
     end

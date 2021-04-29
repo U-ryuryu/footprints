@@ -4,4 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to :admin
+  has_many :visits, dependent: :destroy
+  has_many :calls,  dependent: :destroy
 end

@@ -9,9 +9,14 @@
 <%= link_to "客先情報編集", edit_client_path(@client.id) %>
 <% if user_signed_in? %>
   <%= link_to "訪問情報追加", new_client_visit_path(@client.id) %>
+  <%= link_to "問合せ情報追加", new_client_call_path(@client.id) %>
 <% end %>
-
-<% @visit.each do |visit| %>
+<h2>訪問履歴</h2>
+<% @visits.each do |visit| %>
   <br><%= link_to visit.title, client_visit_path(visit.client_id,visit.id) %>
+<% end %>
+<h2>問合せ履歴</h2>
+<% @calls.each do |call| %>
+  <br><%= link_to call.title, client_call_path(call.client_id,call.id) %>
 <% end %>
 <br><%=link_to 'もどる', root_path %>

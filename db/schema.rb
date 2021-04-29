@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_28_091901) do
+ActiveRecord::Schema.define(version: 2021_04_29_085308) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -23,6 +23,19 @@ ActiveRecord::Schema.define(version: 2021_04_28_091901) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "calls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.date "date", null: false
+    t.string "content", null: false
+    t.integer "status_id", null: false
+    t.bigint "user_id"
+    t.bigint "client_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_calls_on_client_id"
+    t.index ["user_id"], name: "index_calls_on_user_id"
   end
 
   create_table "clients", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -66,6 +79,8 @@ ActiveRecord::Schema.define(version: 2021_04_28_091901) do
     t.index ["user_id"], name: "index_visits_on_user_id"
   end
 
+  add_foreign_key "calls", "clients"
+  add_foreign_key "calls", "users"
   add_foreign_key "clients", "admins"
   add_foreign_key "users", "admins"
   add_foreign_key "visits", "clients"
