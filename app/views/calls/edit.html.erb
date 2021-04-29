@@ -1,5 +1,5 @@
-<h1>訪問情報編集ページ</h1>
-<%= form_with model: [@visit.client,@visit], local: true do |f| %>
+<h1>問合せ情報編集ページ</h1>
+<%= form_with model: [@call.client,@call], local: true do |f| %>
 <br>
 <%= f.text_field :title, placeholder:"タイトル" %>
 <br>
@@ -13,4 +13,4 @@
 <%= f.submit "訪問情報変更" %><%=link_to 'もどる', :back %>
 <% end %>
 
-<%= button_to "削除", client_visit_path(@visit.id), data: { confirm: "本当に削除しますか?" }, method: :delete %>
+<%= button_to "削除", client_call_path(@call.id), data: { confirm: "本当に削除しますか?" }, method: :delete %>
