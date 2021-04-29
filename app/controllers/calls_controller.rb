@@ -12,6 +12,10 @@ class CallsController < ApplicationController
     end
   end
 
+  def show
+    @call = Call.find(params[:id])
+  end
+
   private
 
   def call_params

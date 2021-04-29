@@ -1,0 +1,8 @@
+<h1>訪問情報詳細ページ</h1>
+タイトル：<%= @call.title %><br>
+訪問日：<%= @call.date %><br>
+訪問内容：<%= @call.content %><br>
+状況：<%= Status.find(@call.status_id).name %><br>
+
+<%= link_to "訪問情報編集", edit_client_call_path %>
+<br><%=link_to 'もどる', client_path(params[:client_id]) %>
