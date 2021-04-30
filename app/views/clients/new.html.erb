@@ -1,4 +1,5 @@
 <%= form_with model: @client, url: clients_path, local: true do |f| %>
+<%= render 'shared/error_messages', model: f.object %>
 <br>
 <%= f.text_field :name, placeholder:"客先名" %>
 <br>

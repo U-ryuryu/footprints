@@ -1,0 +1,29 @@
+ja:
+  activerecord:
+    attributes:
+      admin:
+        name: 団体名
+        email: Eメール
+        password: パスワード
+        password_confirmation: パスワード（確認用）
+      user:
+        name: ユーザー名
+      client:
+        name: 客先名
+        tel: 電話番号
+        postal_code: 郵便番号
+        address: 住所
+        charge_tel: 担当者電話番号
+      visit:
+        title: タイトル
+        date: 訪問日
+        content: 作業内容
+        status_id: ステータス
+      call:
+        title: タイトル
+        date: 日付
+        content: 問合せ内容
+        status_id: ステータス
+
+  activemodel:
+    attributes:

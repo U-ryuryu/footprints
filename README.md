@@ -51,7 +51,7 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | title            | string     | null: false                    |
-| date             | date       | null: false                    |
+| date             | datetime   | null: false                    |
 | content          | string     | null: false                    |
 | status_id        | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
@@ -67,7 +67,7 @@
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
 | title            | string     | null: false                    |
-| date             | date       | null: false                    |
+| date             | datetime   | null: false                    |
 | content          | string     | null: false                    |
 | status_id        | integer    | null: false                    |
 | user             | references | null: false, foreign_key: true |
