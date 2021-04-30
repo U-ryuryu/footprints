@@ -11,6 +11,7 @@ class Client < ApplicationRecord
   end
 
   validates :tel, numericality: { only_integer: true, message: '半角数字のみで入力してください' }, if: proc { |client|client.tel.present?}
+  validates :charge_tel, numericality: { only_integer: true, message: '半角数字のみで入力してください' }, length: { maximum: 11 }, if: proc { |client|client.charge_tel.present?}
 
 
   validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/, message: 'はハイフン(-)を含む半角数字7桁で入力してください' },if: proc { |client|client.postal_code.present?}
