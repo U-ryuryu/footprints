@@ -6,7 +6,7 @@ RSpec.describe Visit, type: :model do
       @visit = FactoryBot.build(:visit)
     end
     context '新規登録ができる場合' do
-      it 'name,tel,postal_code,addressが記載されており、charge_telが半角数字11桁以内なら登録できること' do
+      it 'title,date,content,status_idが記載されているなら登録できること' do
         expect(@visit).to be_valid
       end
     end
