@@ -3,9 +3,9 @@
 <br>
 <%= f.text_field :title, placeholder:"タイトル" %>
 <br>
-<%= f.text_field :date, placeholder:"訪問日" %>
+<%= f.datetime_select :date, {} %>
 <br>
-<%= f.text_area :content, placeholder:"作業内容" %>
+<%= f.text_area :content, placeholder:"問合せ内容" %>
 <br>
 <%= f.collection_select(:status_id, Status.all, :id, :name, {}) %>
 <br>
