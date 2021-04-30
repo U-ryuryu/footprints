@@ -5,5 +5,6 @@ FactoryBot.define do
     password = '1a' + Faker::Internet.password(min_length: 4)
     password              { password }
     password_confirmation { password }
+    association :admin
   end
 end

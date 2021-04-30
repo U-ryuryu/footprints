@@ -16,7 +16,7 @@ ja:
         charge_tel: 担当者電話番号
       visit:
         title: タイトル
-        date: 日付
+        date: 訪問日
         content: 作業内容
         status_id: ステータス
       call:

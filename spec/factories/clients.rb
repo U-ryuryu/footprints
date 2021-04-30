@@ -6,5 +6,6 @@ FactoryBot.define do
     address       { Faker::Address.street_address }
     charge        { Faker::Name.name }
     charge_tel    { Faker::Number.between(from: 1, to: 99_999_999_999) }
+    association :admin
   end
 end

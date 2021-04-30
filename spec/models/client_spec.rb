@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe Client, type: :model do
   describe '#create' do
     before do
-      @admin = FactoryBot.create(:admin)
       @client = FactoryBot.build(:client)
-      @client.admin_id = @admin.id
     end
     context '新規登録ができる場合' do
       it 'name,tel,postal_code,addressが記載されており、charge_telが半角数字11桁以内なら登録できること' do

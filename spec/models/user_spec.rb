@@ -3,9 +3,7 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   describe '#create' do
     before do
-      @admin = FactoryBot.create(:admin)
       @user = FactoryBot.build(:user)
-      @user.admin_id = @admin.id
     end
     context '新規登録ができる場合' do
       it 'name,email,password,password_confirmationが記載されていれば登録できること' do
