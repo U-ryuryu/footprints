@@ -5,6 +5,7 @@ ja:
         name: 団体名
         email: Eメール
         password: パスワード
+        password_confirmation: パスワード（確認用）
       user:
         name: ユーザー名
       client:
