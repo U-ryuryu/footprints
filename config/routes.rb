@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'visit_comments/create'
   devise_for :admins, controllers: {
     sessions:      'admins/sessions',
     passwords:      'admins/passwords',
@@ -16,7 +17,9 @@ Rails.application.routes.draw do
   end
   root to: "clients#index"
   resources :clients do
-    resources :visits, except: :index
+    resources :visits, except: :index do
+      resources :visit_comments, only: :create
+    end
     resources :calls, except: :index
   end
 end
