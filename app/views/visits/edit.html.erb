@@ -10,7 +10,7 @@
 <%= f.collection_select(:status_id, Status.all, :id, :name, {}) %>
 <br>
 
-<%= f.submit "訪問情報変更" %><%=link_to 'もどる', :back %>
+<%= f.submit "訪問情報変更" %><%=link_to 'もどる', client_visit_path %>
 <% end %>
 
 <%= button_to "削除", client_visit_path(@visit.id), data: { confirm: "本当に削除しますか?" }, method: :delete %>

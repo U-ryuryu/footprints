@@ -17,6 +17,8 @@ class VisitsController < ApplicationController
 
   def show
     @visit = Visit.find(params[:id])
+    @visit_comment = VisitComment.new
+    @visit_comments = @visit.visit_comments.includes(:user)
   end
 
   def edit
