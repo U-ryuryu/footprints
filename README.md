@@ -82,7 +82,7 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| title            | string     | null: false                    |
+| comment          | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | visit            | references | null: false, foreign_key: true |
 
@@ -95,7 +95,7 @@
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- | ------------------------------ |
-| title            | string     | null: false                    |
+| comment          | string     | null: false                    |
 | user             | references | null: false, foreign_key: true |
 | call             | references | null: false, foreign_key: true |
 
