@@ -1,8 +1,20 @@
 <h1>問合せ情報詳細ページ</h1>
 タイトル：<%= @call.title %><br>
-訪問日：<%= @call.date %><br>
-訪問内容：<%= @call.content %><br>
+問合せ日：<%= @call.date.strftime("%y年%-m月%-d日%-H:%M") %><br>
+問合せ内容：<%= @call.content %><br>
 状況：<%= Status.find(@call.status_id).name %><br>
 
 <%= link_to "訪問情報編集", edit_client_call_path %>
+<% if user_signed_in? %>
+  <%= form_with(model: @call_comment,url: "/clients/#{@call.client_id}/calls/#{@call.id}/call_comments", local: true) do |form| %>
+    <%= form.text_area :comment, placeholder: "コメントする", rows: "2" %>
+    <%= form.submit "SEND" %>
+  <% end %>
+<% end %>
+<h2>＜コメント一覧＞</h2>
+<% @call_comments.each do |comment| %>
+  <strong><%= "#{comment.user.name}" %>：</strong>
+  <%= comment.comment %>
+<% end %>
+
 <br><%=link_to 'もどる', client_path(params[:client_id]) %>

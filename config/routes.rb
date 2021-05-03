@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :visits, except: :index do
       resources :visit_comments, only: :create
     end
-    resources :calls, except: :index
+    resources :calls, except: :index do
+      resources :call_comments, only: :create
+    end
   end
 end

@@ -17,6 +17,8 @@ class CallsController < ApplicationController
 
   def show
     @call = Call.find(params[:id])
+    @call_comment = CallComment.new
+    @call_comments = @call.call_comments.includes(:user)
   end
 
   def edit
