@@ -3,6 +3,7 @@ class Call < ApplicationRecord
   belongs_to :user
   belongs_to :client
   belongs_to :status
+  has_many   :call_comments,  dependent: :destroy
 
   with_options presence: true do
     validates :title
