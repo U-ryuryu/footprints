@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_30_144016) do
+ActiveRecord::Schema.define(version: 2021_05_03_022640) do
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2021_04_30_144016) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  end
+
+  create_table "call_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "comment", null: false
+    t.bigint "user_id"
+    t.bigint "call_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["call_id"], name: "index_call_comments_on_call_id"
+    t.index ["user_id"], name: "index_call_comments_on_user_id"
   end
 
   create_table "calls", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,6 +99,8 @@ ActiveRecord::Schema.define(version: 2021_04_30_144016) do
     t.index ["user_id"], name: "index_visits_on_user_id"
   end
 
+  add_foreign_key "call_comments", "calls"
+  add_foreign_key "call_comments", "users"
   add_foreign_key "calls", "clients"
   add_foreign_key "calls", "users"
   add_foreign_key "clients", "admins"

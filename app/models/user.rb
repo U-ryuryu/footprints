@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many   :visits,         dependent: :destroy
   has_many   :calls,          dependent: :destroy
   has_many   :visit_comments, dependent: :destroy
+  has_many   :call_comments,  dependent: :destroy
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   
