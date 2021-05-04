@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
-
-<h1>Top page</h1>
+<%= render "shared/not_login" %>
 <% if admin_signed_in? || user_signed_in? %>
   <% @client.each do |client| %>
     <%= link_to client.name, client_path(client.id) %>
