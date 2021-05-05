@@ -18,6 +18,10 @@
   height: 60%;
 }
 
+.container .logo {
+  width: 60%;
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -35,24 +39,24 @@
 .btn.user {
   display: block;
   color: white;
-  background-color: #14a4dd;
+  background-color: #0099CC;
   margin: 10px 10px 10px auto;
-  border: 3px solid #14a4dd;
+  border: 3px solid #0099CC;
   border-radius: 20px;
 }
 
 .btn.admin {
   background-color: white;
-  color: #14a4dd;
+  color: #0099CC;
   margin: 10px auto 10px 10px;
-  border: 3px solid #14a4dd;
+  border: 3px solid #0099CC;
   border-radius: 20px;
 }
 
 .link_new_admin a {
   font-size: 14px;
   font-weight: 600;
-  color: #14a4dd;
+  color: #0099CC;
   text-decoration: none;
 }
 /*# sourceMappingURL=not_login.css.map */

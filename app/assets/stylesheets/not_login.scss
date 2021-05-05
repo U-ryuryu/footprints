@@ -1,4 +1,4 @@
-$cBlue: rgb(20, 164, 221);
+$cBlue: #0099CC;
 
 .not_login_content {
   height: 100vh;
@@ -11,6 +11,10 @@ $cBlue: rgb(20, 164, 221);
   margin: auto;
   width: 60%;
   height: 60%;
+
+  & .logo {
+    width: 60%;
+  }
 }
 
 .btn {
