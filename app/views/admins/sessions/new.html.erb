@@ -1,26 +1,31 @@
-<h2>Log in</h2>
+<div class="form_content">
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    
+    <div class="form_header">
+      <%= image_tag "logo_blue.png", class: "logo" %>
+      <div class="content_text">管理者ログイン</div>
+    </div>
+    
+    <%= render 'shared/error_messages', model: f.object %> 
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+    <div class="form">
+      <div class="label">
+        <%= f.label :email %>
+      </div>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "field" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+    <div class="form">
+      <div class="label">
+        <%= f.label :password %>
+      </div>
+      <%= f.password_field :password, autocomplete: "current-password", class: "field" %>
+    </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+    <div class="button_box">
+      <%= f.submit "ログイン", class: "submit" %>
+      <%= link_to "キャンセル", root_path, class: "cancel" %>
     </div>
   <% end %>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
-  </div>
-<% end %>
-
-<%= render "admins/shared/links" %>
+</div>
