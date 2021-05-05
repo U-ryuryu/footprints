@@ -1,0 +1,19 @@
+$cBlue: rgb(20, 164, 221);
+.head {
+  height: 50px;
+  width: 100%;
+  background-color: $cBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  & a {
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
