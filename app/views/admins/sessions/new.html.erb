@@ -6,7 +6,10 @@
       <div class="content_text">管理者ログイン</div>
     </div>
     
-    <%= render 'shared/error_messages', model: f.object %> 
+    <div class='login-flash-message'>
+      <%= flash[:notice] %>
+      <%= flash[:alert] %>
+    </div>
 
     <div class="form">
       <div class="label">

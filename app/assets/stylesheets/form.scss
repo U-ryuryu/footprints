@@ -11,6 +11,10 @@ $cOrange: orange;
   width: 40%;
 }
 
+.new_user {
+  width: 40%;
+}
+
 .form_header {
   display: flex;
   flex-direction: column;
@@ -35,6 +39,11 @@ $cOrange: orange;
   display: contents;
 }
 .error-message {
+  list-style: none;
+  color: red;
+}
+.login-flash-message {
+  margin-top: 10px;
   color: red;
 }
 

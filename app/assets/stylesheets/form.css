@@ -13,6 +13,10 @@
   width: 40%;
 }
 
+.new_user {
+  width: 40%;
+}
+
 .form_header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -45,6 +49,12 @@
 }
 
 .error-message {
+  list-style: none;
+  color: red;
+}
+
+.login-flash-message {
+  margin-top: 10px;
   color: red;
 }
 
