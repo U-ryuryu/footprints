@@ -1,0 +1,22 @@
+<% if user_signed_in? %>
+  <div class="client_list">
+    <%= link_to "顧客情報新規登録", new_client_path, class: "client_new_link"%>
+    <div class="client_list_top">
+      <div class="name_column">ユーザー情報</div>
+      <div class="update_column">最終更新日</div>
+    </div>
+    <div class="client_list_box">
+      <% @client.each do |client| %>
+        <div class="record">
+          <div class="list">
+            <div class="name"><%= client.name %></div>
+            <%= link_to "履歴確認", client_path(client.id), class: "client_link" %>
+          </div>
+          <div class="update">
+            2021/5/6
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>

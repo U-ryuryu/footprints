@@ -1,16 +1,16 @@
-.admin_top {
+.top {
   width: 100vw;
   height: 30vh;
   min-height: 180px;
   border-bottom: 2px dotted black;
 }
 
-.admin_top .admin_name {
+.top .name {
   font-size: 20px;
   text-align: center;
 }
 
-.admin_top .admin_info {
+.top .info {
   margin-top: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,13 +20,13 @@
           justify-content: center;
 }
 
-.admin_top .admin_info .admin_image {
+.top .info .image {
   width: 120px;
   height: 120px;
   margin-right: 20px;
 }
 
-.admin_top .admin_info .admin_text {
+.top .info .text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -42,7 +42,7 @@
           justify-content: space-evenly;
 }
 
-.admin_top .admin_info .admin_text .indispensable {
+.top .info .text .indispensable {
   width: 180px;
   padding: 5px 10px;
   background-color: #0099CC;
@@ -51,11 +51,11 @@
   font-weight: 600;
 }
 
-.admin_top .admin_info .admin_text .admin_mail {
+.top .info .text .mail {
   font-size: 20px;
 }
 
-.admin_top .admin_info .admin_text .admin_link {
+.top .info .text .link {
   background-color: white;
   color: gray;
   font-size: 13px;
@@ -67,7 +67,7 @@
           box-shadow: 1px 1px 0 0 black;
 }
 
-.admin_top .admin_info .admin_text .admin_link:hover {
+.top .info .text .link:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
   -webkit-transform: translate(1px, 1px);

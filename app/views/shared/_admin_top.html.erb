@@ -1,18 +1,4 @@
 <% if admin_signed_in? %>
-  <div class="admin_top">
-    <div class="admin_name"><%= "#{current_admin.name} 様"%></div>
-    <div class="admin_info">
-      <%= image_tag "img_noimage.png", class: "admin_image" %>
-      <div class="admin_text">
-        <div class="admin_name">
-          <%= "#{current_admin.name} 様"%>
-          <span class="indispensable">管理者</span>
-        </div>
-        <div class="admin_mail"><%= current_admin.email %></div>
-        <%= link_to "管理者情報編集", edit_admin_registration_path, class: "admin_link" %>
-      </div>
-    </div>
-  </div>
 
   <div class="user_list">
     <%= link_to "新規ユーザー登録", new_user_registration_path, class: "user_regist_link"%>
@@ -26,5 +12,5 @@
       <% end %>
     </div>
   </div>
-  
+
 <% end %>
