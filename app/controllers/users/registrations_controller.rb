@@ -34,10 +34,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def update
     if user_signed_in?
       self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
+    else
+      self.resource = resource_class.to_adapter.get!(params[:id])
     end
 
     prev_unconfirmed_email = resource.unconfirmed_email if resource.respond_to?(:unconfirmed_email)
     resource_updated = update_resource(resource, account_update_params)
+
     if admin_signed_in?
       if current_admin.id == User.find(params[:id]).admin.id
         resource_updated = update_resource_without_password(resource, account_update_params)
@@ -49,7 +52,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
     if resource_updated
       set_flash_message_for_update(resource, prev_unconfirmed_email)
-      bypass_sign_in resource, scope: resource_name if sign_in_after_change_password?
+      bypass_sign_in resource, scope: resource_name if sign_in_after_change_password? && user_signed_in?
 
       respond_with resource, location: after_update_path_for(resource)
     else
