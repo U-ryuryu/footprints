@@ -25,7 +25,7 @@
 
     <div class="form">
       <div class="label">
-        <%= f.label :password %> <i>(leave blank if you don't want to change it)</i>
+        <%= f.label :password %><span class="indispensable">変更しない場合は空欄</span>
       </div>
       <%= f.password_field :password, autocomplete: "new-password", class: "field" %>
     </div>
@@ -40,7 +40,7 @@
     <% if user_signed_in?%>
       <div class="form">
         <div class="label">
-          <%= f.label :current_password %><span class="indispensable">変更しない場合は空欄</span>
+          <%= f.label :current_password %><span class="indispensable">必須</span>
         </div>
         <%= f.password_field :current_password, autocomplete: "current-password", class: "field" %>
       </div>

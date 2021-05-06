@@ -1,17 +1,59 @@
-<%= form_with model: @client, url: clients_path, local: true do |f| %>
-<%= render 'shared/error_messages', model: f.object %>
-<br>
-<%= f.text_field :name, placeholder:"客先名" %>
-<br>
-<%= f.text_field :tel, placeholder:"電話番号" %>
-<br>
-<%= f.text_field :postal_code, placeholder:"郵便番号" %>
-<br>
-<%= f.text_field :address, placeholder:"住所" %>
-<br>
-<%= f.text_field :charge, placeholder:"担当者" %>
-<br>
-<%= f.text_field :charge_tel, placeholder:"担当者電話番号" %>
-<br>
-<%= f.submit "客先登録" %><%=link_to 'もどる', root_path %>
-<% end %>
+<%= render "shared/header" %>
+
+<div class="form_content">
+  <%= form_with model: @client, url: clients_path, class: "new_client", local: true do |f| %>
+
+    <div class="form_header">
+      <div class="content_text">顧客情報新規登録</div>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+    
+    <div class="form">
+      <div class="label">
+        <%= f.label :name %>
+      </div>
+      <%= f.text_field :name, placeholder:"客先名", class: "field" %>
+    </div>
+
+    <div class="form">
+      <div class="label">
+        <%= f.label :tel %>
+      </div>
+      <%= f.text_field :tel, placeholder:"電話番号", class: "field" %>
+    </div>
+    
+    <div class="form">
+      <div class="label">
+        <%= f.label :postal_code %>
+      </div>
+      <%= f.text_field :postal_code, placeholder:"郵便番号", class: "field" %>
+    </div>
+    
+    <div class="form">
+      <div class="label">
+        <%= f.label :address %>
+      </div>
+      <%= f.text_field :address, placeholder:"住所", class: "field" %>
+    </div>
+    
+    <div class="form">
+      <div class="label">
+        <%= f.label :charge %>
+      </div>
+      <%= f.text_field :charge, placeholder:"担当者", class: "field" %>
+    </div>
+    
+    <div class="form">
+      <div class="label">
+        <%= f.label :charge_tel %>
+      </div>
+      <%= f.text_field :charge_tel, placeholder:"担当者電話番号", class: "field" %>
+    </div>
+    
+    <div class="button_box">
+      <%= f.submit "登録", class: "submit" %>
+      <%= link_to "キャンセル", root_path, class: "cancel" %>
+    </div>
+  <% end %>
+</div>
