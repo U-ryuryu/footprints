@@ -9,11 +9,7 @@
           justify-content: center;
 }
 
-.new_admin {
-  width: 40%;
-}
-
-.new_user {
+.new_admin, .new_user, .edit_admin, .edit_user {
   width: 40%;
 }
 
@@ -127,6 +123,21 @@
   height: 30px;
   margin: 10px auto 0;
   border: 5px solid orange;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.button_box .delete {
+  display: block;
+  background-color: white;
+  color: red;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  width: 30%;
+  height: 30px;
+  margin: 30px auto 0;
+  border: 5px solid red;
   border-radius: 20px;
   cursor: pointer;
 }
