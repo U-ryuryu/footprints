@@ -108,8 +108,13 @@
   border-bottom: 2px solid black;
 }
 
-.user_list .list {
+.user_list .list_box {
   width: 40%;
+  height: 280px;
+  overflow: scroll;
+}
+
+.user_list .list_box .list {
   height: 35px;
   border-bottom: 1px dotted gray;
   display: -webkit-box;
@@ -125,7 +130,7 @@
   font-weight: 600;
 }
 
-.user_list .list .user_link {
+.user_list .list_box .list .user_link {
   display: block;
   text-decoration: none;
   background-color: #0099CC;
