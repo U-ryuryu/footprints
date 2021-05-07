@@ -5,10 +5,10 @@ $cBlue: #0099CC;
   display: flex;
   justify-content: center;
 
-  & .visit{
+  & .show_box {
     width: 80%;
 
-    & .visit_text {
+    & .top_text {
       font-size: 30px;
       font-weight: 600;
       color: $cBlue;
@@ -16,7 +16,7 @@ $cBlue: #0099CC;
 
     }
 
-    & .visit_new_link {
+    & .new_link {
       display:block;
       text-align: center;
       text-decoration: none;
@@ -30,8 +30,9 @@ $cBlue: #0099CC;
       border-radius: 20px;
     }
 
-    & .visit_box {
-      
+    & .list_box {
+      overflow: scroll;
+
       & .record {
         height: 35px;
         display: flex;
@@ -45,7 +46,7 @@ $cBlue: #0099CC;
           display: flex;
           justify-content: space-between;
 
-          & .visit_link {
+          & .link {
             display: block;
             text-decoration: none;
             background-color: $cBlue;

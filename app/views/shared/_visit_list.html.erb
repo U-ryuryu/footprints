@@ -1,0 +1,18 @@
+<div class="client_show">
+    <div class="show_box">
+      <div class="top_text">訪問履歴</div>
+      <%= link_to "訪問情報新規登録", new_client_visit_path(@client.id), class: "new_link"%>
+      <div class="list_box">
+        <% @visits.each do |visit| %>
+          <div class="record">
+            <div class="list">
+              <div class="title"><%= visit.title %></div>
+              <%= link_to "詳細", client_visit_path(visit.client_id,visit.id),class: "link" %>
+            </div>
+            <div class="created"><%= visit.updated_at.strftime("%y/%m/%d %H:%M") %></div>
+            <div class="status"><%= Status.find(visit.status_id).name %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

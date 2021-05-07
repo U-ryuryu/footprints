@@ -1,0 +1,18 @@
+<div class="client_show">
+    <div class="show_box">
+      <div class="top_text">見積り履歴</div>
+      <%= link_to "見積り情報新規登録", new_client_call_path(@client.id), class: "new_link"%>
+      <div class="list_box">
+        <% @calls.each do |call| %>
+          <div class="record">
+            <div class="list">
+              <div class="title"><%= call.title %></div>
+              <%= link_to "詳細", client_call_path(call.client_id,call.id),class: "link" %>
+            </div>
+            <div class="created"><%= call.updated_at.strftime("%y/%m/%d %H:%M") %></div>
+            <div class="status"><%= Status.find(call.status_id).name %></div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>

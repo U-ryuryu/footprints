@@ -8,18 +8,18 @@
           justify-content: center;
 }
 
-.client_show .visit {
+.client_show .show_box {
   width: 80%;
 }
 
-.client_show .visit .visit_text {
+.client_show .show_box .top_text {
   font-size: 30px;
   font-weight: 600;
   color: #0099CC;
   text-align: center;
 }
 
-.client_show .visit .visit_new_link {
+.client_show .show_box .new_link {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -33,7 +33,11 @@
   border-radius: 20px;
 }
 
-.client_show .visit .visit_box .record {
+.client_show .show_box .list_box {
+  overflow: scroll;
+}
+
+.client_show .show_box .list_box .record {
   height: 35px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -44,7 +48,7 @@
   border-bottom: 1px dotted gray;
 }
 
-.client_show .visit .visit_box .record .list {
+.client_show .show_box .list_box .record .list {
   width: 55%;
   font-size: 20px;
   border-right: 1px dotted gray;
@@ -56,7 +60,7 @@
           justify-content: space-between;
 }
 
-.client_show .visit .visit_box .record .list .visit_link {
+.client_show .show_box .list_box .record .list .link {
   display: block;
   text-decoration: none;
   background-color: #0099CC;
@@ -66,7 +70,7 @@
   border-radius: 20px;
 }
 
-.client_show .visit .visit_box .record .created {
+.client_show .show_box .list_box .record .created {
   width: 25%;
   height: 90%;
   font-size: 16px;
@@ -82,7 +86,7 @@
           align-items: center;
 }
 
-.client_show .visit .visit_box .record .status {
+.client_show .show_box .list_box .record .status {
   width: 20%;
   height: 90%;
   font-size: 16px;
