@@ -10,7 +10,7 @@ ja:
       user:
         name: ユーザー名
       client:
-        name: 客先名
+        name: 顧客名
         tel: 電話番号
         postal_code: 郵便番号
         address: 住所
@@ -24,7 +24,7 @@ ja:
       call:
         title: タイトル
         date: 日付
-        content: 問合せ内容
+        content: 依頼内容
         status_id: ステータス
 
   activemodel:
