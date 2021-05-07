@@ -1,0 +1,48 @@
+.client_top {
+  width: 100vw;
+  height: 30vh;
+  min-height: 180px;
+  overflow: scroll;
+  border-bottom: 2px dotted black;
+}
+
+.client_top .name {
+  font-size: 20px;
+  text-align: center;
+}
+
+.client_top .info {
+  height: 120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.client_top .info .info_box {
+  width: 30%;
+  height: 140px;
+  font-size: 18px;
+}
+
+.client_top .info .info_box .link {
+  background-color: white;
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
+  border: 2px solid gray;
+  padding: 2px 4px;
+  text-decoration: none;
+  -webkit-box-shadow: 1px 1px 0 0 black;
+          box-shadow: 1px 1px 0 0 black;
+}
+
+.client_top .info .info_box .link:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+/*# sourceMappingURL=top.css.map */
