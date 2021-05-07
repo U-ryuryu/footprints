@@ -1,0 +1,60 @@
+.content_top {
+  width: 100vw;
+  height: 40vh;
+  min-height: 180px;
+  overflow: scroll;
+  border-bottom: 2px dotted black;
+}
+
+.content_top .name {
+  font-size: 20px;
+  text-align: center;
+}
+
+.content_top .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.content_top .info .info_box {
+  width: 60%;
+  height: 140px;
+  font-size: 18px;
+}
+
+.content_top .info .info_box .text {
+  font-size: 16px;
+  text-align: center;
+}
+
+.content_top .info .info_box .text.date, .content_top .info .info_box .text.status {
+  font-size: 14px;
+}
+
+.content_top .info .info_box .link {
+  width: 100px;
+  text-align: center;
+  display: block;
+  background-color: white;
+  color: gray;
+  font-size: 13px;
+  font-weight: 600;
+  border: 2px solid gray;
+  padding: 2px 4px;
+  margin: 0 auto;
+  text-decoration: none;
+  -webkit-box-shadow: 1px 1px 0 0 black;
+          box-shadow: 1px 1px 0 0 black;
+}
+
+.content_top .info .info_box .link:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translate(1px, 1px);
+          transform: translate(1px, 1px);
+}
+/*# sourceMappingURL=top.css.map */

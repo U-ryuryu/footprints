@@ -1,0 +1,14 @@
+  
+  
+  <%= form_with(model: @visit_comment,url: "/clients/#{@visit.client_id}/visits/#{@visit.id}/visit_comments", local: true) do |form| %>
+    <%= form.text_area :comment, placeholder: "コメントする", rows: "2" %>
+    <%= form.submit "SEND" %>
+
+    <h2>＜コメント一覧＞</h2>
+  <% @visit_comments.each do |comment| %>
+    <strong><%= "#{comment.user.name}" %>：</strong>
+    <%= comment.comment %>
+  <% end %>
+
+  <%= link_to 'もどる', client_path(params[:client_id]) %>
+  <% end %>
