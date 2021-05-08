@@ -8,7 +8,9 @@
               <div class="title"><%= call.title %></div>
               <%= link_to "詳細", client_call_path(call.client_id,call.id),class: "link" %>
             </div>
-            <div class="created"><%= call.updated_at.strftime("%y/%m/%d %H:%M") %></div>
+            <div class="created">
+              <%= call.updated_at.strftime("%y/%m/%d %H:%M") %>
+            </div>
             <div class="status"><%= Status.find(call.status_id).name %></div>
           </div>
         <% end %>

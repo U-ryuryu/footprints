@@ -1,32 +1,47 @@
 $cBlue: #0099CC;
 
-.tab-wrap {
-	background: White;
-	box-shadow: 0 0 5px rgba(0,0,0,.1);
-	display: flex;
-	flex-wrap: wrap;
-	overflow: hidden;
-	padding: 0 0 20px;
-}
+.tab-container {
+	width: 100vw;
 
-.tab-label {
-  height: 35px;
-  font-size: 25px;
-	color: Gray;
-	cursor: pointer;
-	flex: 1;
-	font-weight: 600;
-	order: -1;
-	position: relative;
-	text-align: center;
-	transition: cubic-bezier(0.4, 0, 0.2, 1) .2s;
-	user-select: none;
-	white-space: nowrap;
-	-webkit-tap-highlight-color: transparent;
-}
+	& .tab-wrap {
+		width: 100vw;
+		background: White;
+		box-shadow: 0 0 5px rgba(0,0,0,.1);
+		display: flex;
+		flex-wrap: wrap;
+		overflow: hidden;
+		padding: 0 0 20px;
 
-.tab-label:hover {
-	background: rgba(0, 191, 255,.1);
+		& .tab-label {
+			height: 35px;
+			font-size: 25px;
+			color: Gray;
+			cursor: pointer;
+			flex: 1;
+			font-weight: 600;
+			order: -1;
+			position: relative;
+			text-align: center;
+			transition: cubic-bezier(0.4, 0, 0.2, 1) .2s;
+			user-select: none;
+			white-space: nowrap;
+			-webkit-tap-highlight-color: transparent;
+
+			&:hover {
+				background: rgba(0, 191, 255,.1);
+			}
+		}
+
+		& .tab-content {
+			width: 100%;
+			height:0;
+			opacity:0;
+			padding: 0 20px;
+			pointer-events:none;
+			transform: translateX(-30%);
+			transition: transform .3s 80ms, opacity .3s 80ms;
+		}
+	}
 }
 
 .tab-switch:checked + .tab-label {
@@ -58,15 +73,6 @@ $cBlue: #0099CC;
 	transform: translateX(0);
 }
 
-.tab-content {
-	height:0;
-	opacity:0;
-	padding: 0 20px;
-	pointer-events:none;
-	transform: translateX(-30%);
-	transition: transform .3s 80ms, opacity .3s 80ms;
-}
-
 .tab-switch:checked ~ .tab-content {
 	transform: translateX(30%);
 }
@@ -89,17 +95,9 @@ body {
 	margin: 10px;
 }
 
-/* ==============================
-/* 幅と高さの設定
-/* ============================== */
-
-.tab-container,
-.tab-content {
-	width: 100vw;
-}
 
 .tab-wrap {
-	width: 1000px;
+	width: 100vw;
 }
 
 /* ==============================

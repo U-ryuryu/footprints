@@ -8,7 +8,13 @@ $cBlue: #0099CC;
   align-items: center;
   position: relative;
 
-  & a {
+  &.logo {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  & .logout {
     position: absolute;
     top: 25%;
     right: 2%;

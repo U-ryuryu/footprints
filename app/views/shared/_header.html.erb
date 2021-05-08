@@ -1,12 +1,12 @@
 <% if admin_signed_in? || user_signed_in? %>
   <header>
     <div class="head" >
-      <%= image_tag "logo_white.png", class: "logo" %>
+      <%= link_to image_tag("logo_white.png"), root_path, class: "logobox" %>
       <% if admin_signed_in? %>
-        <%= link_to "ログアウト", destroy_admin_session_path, method: :delete %>
+        <%= link_to "ログアウト", destroy_admin_session_path, class: "logout", method: :delete %>
       <% end %>
       <% if user_signed_in? %>
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        <%= link_to "ログアウト", destroy_user_session_path, class: "logout", method: :delete %>
       <% end %>
     </div>
   </header>

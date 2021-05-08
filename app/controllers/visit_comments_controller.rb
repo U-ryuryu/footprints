@@ -2,6 +2,8 @@ class VisitCommentsController < ApplicationController
   before_action :redirect_user
   def create
     comment = VisitComment.create(comment_params)
+    comment.visit.touch
+    comment.visit.client.touch
     redirect_to "/clients/#{comment.visit.client_id}/visits/#{comment.visit.id}"
   end
 

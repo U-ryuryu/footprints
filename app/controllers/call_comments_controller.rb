@@ -2,6 +2,8 @@ class CallCommentsController < ApplicationController
   before_action :redirect_user
   def create
     comment = CallComment.create(comment_params)
+    comment.call.touch
+    comment.call.client.touch
     redirect_to "/clients/#{comment.call.client_id}/calls/#{comment.call.id}"
   end
 

@@ -14,7 +14,13 @@
   position: relative;
 }
 
-.head a {
+.head.logo {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.head .logout {
   position: absolute;
   top: 25%;
   right: 2%;
