@@ -9,6 +9,7 @@ class CallsController < ApplicationController
   def create
     @call = Call.new(call_params)
     if @call.save
+      @call.client.touch
       redirect_to client_path(params[:client_id])
     else
       render :new
@@ -26,6 +27,7 @@ class CallsController < ApplicationController
 
   def update
     if @call.update(call_params)
+      @call.client.touch
       redirect_to client_call_path
     else
       render :edit

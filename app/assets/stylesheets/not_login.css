@@ -1,0 +1,62 @@
+.not_login_content {
+  height: 100vh;
+  text-align: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  margin: auto;
+  width: 60%;
+  height: 60%;
+}
+
+.container .logo {
+  width: 60%;
+}
+
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 20px 0;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.btn a {
+  text-decoration: none;
+}
+
+.btn.user {
+  display: block;
+  color: white;
+  background-color: #0099CC;
+  margin: 10px 10px 10px auto;
+  border: 3px solid #0099CC;
+  border-radius: 20px;
+}
+
+.btn.admin {
+  background-color: white;
+  color: #0099CC;
+  margin: 10px auto 10px 10px;
+  border: 3px solid #0099CC;
+  border-radius: 20px;
+}
+
+.link_new_admin a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0099CC;
+  text-decoration: none;
+}
+/*# sourceMappingURL=not_login.css.map */

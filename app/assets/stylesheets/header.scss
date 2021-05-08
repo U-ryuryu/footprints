@@ -1,0 +1,25 @@
+$cBlue: #0099CC;
+.head {
+  height: 50px;
+  width: 100vw;
+  background-color: $cBlue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &.logo {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  & .logout {
+    position: absolute;
+    top: 25%;
+    right: 2%;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,14 @@
+<% if !admin_signed_in? && !user_signed_in? %>
+
+  <div class="not_login_content">
+    <div class="container">
+      <%= image_tag "logo_blue.png", class: "logo" %>
+      <div class="btn">
+        <%= link_to "ユーザーログイン", new_user_session_path, class: "btn user" %>
+        <%= link_to "管理者ログイン", new_admin_session_path, class: "btn admin" %>
+      </div>
+      <div class="link_new_admin"><%= link_to "新規ご利用登録はこちら", new_admin_registration_path %></div>
+    </div>
+  </div>
+  
+<% end %>

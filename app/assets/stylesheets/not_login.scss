@@ -1,0 +1,54 @@
+$cBlue: #0099CC;
+
+.not_login_content {
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  margin: auto;
+  width: 60%;
+  height: 60%;
+
+  & .logo {
+    width: 60%;
+  }
+}
+
+.btn {
+  display: flex;
+  margin: 20px 0;
+  padding: 15px 40px;
+  font-size: 16px;
+  font-weight: 600;
+
+  & a {
+    text-decoration: none;
+  }
+  &.user {
+    display: block;
+    color: white;
+    background-color: $cBlue;
+    margin: 10px 10px 10px auto;
+    border: 3px solid $cBlue;
+    border-radius: 20px;
+  }
+  &.admin {
+    background-color: white;
+    color: $cBlue;
+    margin: 10px auto 10px 10px;
+    border: 3px solid $cBlue;
+    border-radius: 20px;
+  }
+}
+.link_new_admin a{
+  font-size: 14px;
+  font-weight: 600;
+  color: $cBlue;
+  text-decoration: none;
+}
+
+
+

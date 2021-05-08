@@ -24,7 +24,7 @@ RSpec.describe Call, type: :model do
       it 'contentが空では登録できないこと' do
         @call.content= ''
         @call.valid?
-        expect(@call.errors.full_messages).to include("問合せ内容を入力してください")
+        expect(@call.errors.full_messages).to include("依頼内容を入力してください")
       end
       it 'status_idが1では登録できないこと' do
         @call.status_id = 1

@@ -1,0 +1,31 @@
+.head {
+  height: 50px;
+  width: 100vw;
+  background-color: #0099CC;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.head.logo {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+
+.head .logout {
+  position: absolute;
+  top: 25%;
+  right: 2%;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+}
+/*# sourceMappingURL=header.css.map */

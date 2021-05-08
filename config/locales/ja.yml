@@ -6,13 +6,15 @@ ja:
         email: Eメール
         password: パスワード
         password_confirmation: パスワード（確認用）
+        current_password: 現在のパスワード
       user:
         name: ユーザー名
       client:
-        name: 客先名
+        name: 顧客名
         tel: 電話番号
         postal_code: 郵便番号
         address: 住所
+        charge: 担当者名
         charge_tel: 担当者電話番号
       visit:
         title: タイトル
@@ -22,7 +24,7 @@ ja:
       call:
         title: タイトル
         date: 日付
-        content: 問合せ内容
+        content: 依頼内容
         status_id: ステータス
 
   activemodel:

@@ -1,0 +1,51 @@
+$cOrange: orange;
+
+.content_top {
+  width: 100vw;
+  height: 40vh;
+  min-height: 180px;
+  overflow: scroll;
+  border-bottom: 2px dotted black;
+  & .name {
+    font-size: 20px;
+    text-align: center;
+  }
+  & .info {
+    display: flex;
+    justify-content: center;
+
+    & .info_box {
+      width: 60%;
+      height: 140px;
+      font-size: 18px;
+
+      & .text {
+        font-size: 16px;
+        text-align: center;
+
+        &.date,&.status {
+          font-size: 14px;
+        }
+      }
+      
+      & .link {
+        width: 100px;
+        text-align: center;
+        display: block;
+        background-color: white;
+        color:gray;
+        font-size: 13px;
+        font-weight: 600;
+        border: 2px solid gray;
+        padding: 2px 4px;
+        margin: 0 auto;
+        text-decoration: none;
+        box-shadow: 1px 1px 0 0 black;
+        &:hover{
+          box-shadow: none;
+          transform: translate(1px,1px);
+        }
+      }
+    }
+  }
+}

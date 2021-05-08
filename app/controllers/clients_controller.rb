@@ -1,16 +1,12 @@
 class ClientsController < ApplicationController
   before_action :redirect_user, only: [:show,:edit,:update,:destroy]
   def index
-    if admin_signed_in?
-      @client = Client.where(admin_id: current_admin.id)
-    elsif user_signed_in?
-      @client = Client.where(admin_id: current_user.admin.id)
-    end
+      @client = Client.where(admin_id: current_user.admin.id).order(updated_at: "DESC").includes(:admin)
   end
 
   def show
-    @visits = Visit.where(client_id: @client.id)
-    @calls = Call.where(client_id: @client.id)
+    @visits = Visit.where(client_id: @client.id).order(updated_at: "DESC").includes(:user,:client)
+    @calls = Call.where(client_id: @client.id).order(updated_at: "DESC").includes(:user,:client)
   end
 
   def new

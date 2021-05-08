@@ -1,0 +1,16 @@
+<% if admin_signed_in? %>
+
+  <div class="user_list">
+    <%= link_to "新規ユーザー登録", new_user_registration_path, class: "user_regist_link"%>
+    <div class="user_list_top">ユーザー情報</div>
+    <div class="list_box">
+      <% current_admin.users.each do |user| %>
+        <div class="list">
+          <div class="user_name"><%= user.name %> </div>
+          <%= link_to "編集" , edit_user_id_registration_path(user.id), class: "user_link" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+<% end %>

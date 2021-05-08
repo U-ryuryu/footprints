@@ -9,6 +9,7 @@ class VisitsController < ApplicationController
   def create
     @visit = Visit.new(visit_params)
     if @visit.save
+      @visit.client.touch
       redirect_to client_path(params[:client_id])
     else
       render :new
@@ -26,6 +27,7 @@ class VisitsController < ApplicationController
 
   def update
     if @visit.update(visit_params)
+      @visit.client.touch
       redirect_to client_visit_path
     else
       render :edit

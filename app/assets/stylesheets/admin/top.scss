@@ -1,0 +1,106 @@
+$cBlue: #0099CC;
+
+.top {
+  width: 100vw;
+  height: 30vh;
+  min-height: 180px;
+  min-width: 700px;
+  border-bottom: 2px dotted black;
+  & .name {
+    font-size: 20px;
+    text-align: center;
+  }
+  & .info {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    
+    & .image {
+      width: 120px;
+      height: 120px;
+      margin-right: 20px;
+    }
+
+    & .text {
+      display: flex;
+      flex-direction: column;
+      align-items: baseline;
+      justify-content: space-evenly;
+      & .indispensable {
+        width: 180px;
+        padding: 5px 10px;
+        background-color: $cBlue;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+      }
+      & .mail {
+        font-size: 20px;
+      }
+      & .link {
+        background-color: white;
+        color:gray;
+        font-size: 13px;
+        font-weight: 600;
+        border: 2px solid gray;
+        padding: 2px 4px;
+        text-decoration: none;
+        box-shadow: 1px 1px 0 0 black;
+        &:hover{
+          box-shadow: none;
+          transform: translate(1px,1px);
+        }
+      }
+    }
+  }
+}
+
+.user_list {
+  height: calc(70vh - 50px);
+  min-width: 700px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  & .user_regist_link {
+    display:block;
+    text-align: center;
+    text-decoration: none;
+    color: $cBlue;
+    font-size: 20px;
+    font-weight: 600;
+    width: 30%;
+    height: 40px;
+    margin: 30px auto 30px;
+    border: 4px solid $cBlue;
+    border-radius: 20px;
+  }
+  & .user_list_top {
+    width: 40%;
+    text-align: center;
+    border-bottom: 2px solid black;
+  }
+  & .list_box {
+    width: 40%;
+    height: 70%;
+    min-height: 175px;
+    overflow: scroll;
+    & .list {
+      height: 35px;
+      border-bottom: 1px dotted gray;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      font-size: 20px;
+      font-weight: 600;
+      & .user_link {
+        display: block;
+        text-decoration: none;
+        background-color: $cBlue;
+        color: white;
+        padding: 1px 20px;
+        border-radius: 20px;
+      }
+    }
+  }
+}
+
