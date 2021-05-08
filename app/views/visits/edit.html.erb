@@ -1,16 +1,46 @@
-<h1>訪問情報編集ページ</h1>
-<%= form_with model: [@visit.client,@visit], local: true do |f| %>
-<br>
-<%= f.text_field :title, placeholder:"タイトル" %>
-<br>
-<%= f.datetime_select :date, {} %>
-<br>
-<%= f.text_area :content, placeholder:"作業内容" %>
-<br>
-<%= f.collection_select(:status_id, Status.all, :id, :name, {}) %>
-<br>
+<%= render "shared/header" %>
 
-<%= f.submit "訪問情報変更" %><%=link_to 'もどる', client_visit_path %>
-<% end %>
+<div class="form_content">
+  <%= form_with model: [@visit.client,@visit], class: "form_with", local: true do |f| %>
 
-<%= button_to "削除", client_visit_path(@visit.id), data: { confirm: "本当に削除しますか?" }, method: :delete %>
+    <div class="form_header">
+      <div class="content_text">訪問情報新編集</div>
+    </div>
+
+    <%= render 'shared/error_messages', model: f.object %>
+
+    <div class="form">
+      <div class="label">
+        <%= f.label :title %>
+      </div>
+      <%= f.text_field :title, placeholder:"タイトル", class: "field" %>
+    </div>
+
+    <div class="form">
+      <div class="label">
+        <%= f.label :date %>
+      </div>
+      <div class="date"><%= f.datetime_select :date, {start_year: Time.now.year - 1, minute_step: 5, datetime_separator: "-", time_separator: "："}, class: "field" %></div>
+    </div>
+
+    <div class="form">
+      <div class="label">
+        <%= f.label :content %>
+      </div>
+      <%= f.text_area :content, placeholder:"作業内容", class: "field content" %>
+    </div>
+
+    <div class="form">
+      <div class="label">
+        <%= f.label :status_id %>
+      </div>
+      <%= f.collection_select(:status_id, Status.all, :id, :name, {}, class: "field") %>
+    </div>
+
+    <div class="button_box">
+      <%= f.submit "登録", class: "submit" %>
+      <%= link_to "キャンセル", client_path(params[:client_id]), class: "cancel" %>
+      <%= link_to "削除", client_visit_path(@visit.id), data: { confirm: "本当に削除しますか？" }, class: "delete", method: :delete %>
+    </div>
+  <% end %>
+</div>
