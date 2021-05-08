@@ -1,6 +1,5 @@
 <div class="client_show">
   <div class="show_box">
-    <div class="top_text">訪問履歴</div>
     <%= link_to "訪問情報新規登録", new_client_visit_path(@client.id), class: "new_link"%>
     <div class="list_box">
       <% @visits.each do |visit| %>

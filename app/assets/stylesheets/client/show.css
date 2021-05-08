@@ -13,14 +13,6 @@
   width: 80%;
 }
 
-.client_show .show_box .top_text {
-  height: 35px;
-  font-size: 30px;
-  font-weight: 600;
-  color: #0099CC;
-  text-align: center;
-}
-
 .client_show .show_box .new_link {
   display: block;
   text-align: center;
@@ -29,7 +21,7 @@
   font-size: 20px;
   font-weight: 600;
   width: 40%;
-  height: 30px;
+  height: 40px;
   margin: 10px auto 20px;
   border: 4px solid #0099CC;
   border-radius: 20px;
@@ -37,6 +29,7 @@
 
 .client_show .show_box .list_box {
   height: calc(100% - 162px);
+  min-height: 140px;
   overflow: scroll;
 }
 
@@ -104,6 +97,10 @@
           align-items: center;
 }
 
+.client_show .show_box a {
+  text-decoration: none;
+}
+
 .client_show .show_box .back_btn {
   display: block;
   background-color: white;
@@ -112,7 +109,7 @@
   font-size: 20px;
   font-weight: 700;
   width: 40%;
-  height: 30px;
+  height: 40px;
   margin: 10px auto 0;
   border: 5px solid orange;
   border-radius: 20px;

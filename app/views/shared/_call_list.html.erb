@@ -1,6 +1,5 @@
 <div class="client_show">
     <div class="show_box">
-      <div class="top_text">見積り履歴</div>
       <%= link_to "見積り情報新規登録", new_client_call_path(@client.id), class: "new_link"%>
       <div class="list_box">
         <% @calls.each do |call| %>

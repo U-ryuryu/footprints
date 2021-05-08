@@ -10,14 +10,6 @@ $cOrange: orange;
     height: 100%;
     width: 80%;
 
-    & .top_text {
-      height: 35px;
-      font-size: 30px;
-      font-weight: 600;
-      color: $cBlue;
-      text-align: center;
-    }
-
     & .new_link {
       display:block;
       text-align: center;
@@ -26,7 +18,7 @@ $cOrange: orange;
       font-size: 20px;
       font-weight: 600;
       width: 40%;
-      height: 30px;
+      height: 40px;
       margin: 10px auto 20px;
       border: 4px solid $cBlue;
       border-radius: 20px;
@@ -34,6 +26,7 @@ $cOrange: orange;
 
     & .list_box {
       height: calc(100% - 162px);
+      min-height: 140px;
       overflow: scroll;
 
       & .record {
@@ -81,6 +74,9 @@ $cOrange: orange;
       }
     }
 
+    & a {
+      text-decoration: none;
+    }
     & .back_btn {
       display: block;
       background-color: white;
@@ -89,7 +85,7 @@ $cOrange: orange;
       font-size: 20px;
       font-weight: 700;
       width: 40%;
-      height: 30px;
+      height: 40px;
       margin: 10px auto 0;
       border: 5px solid $cOrange;
       border-radius: 20px;

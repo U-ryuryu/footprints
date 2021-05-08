@@ -1,12 +1,13 @@
-<% if user_signed_in? %>
-
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><%= render "shared/visit_list" %></div>
-      <div class="swiper-slide"><%= render "shared/call_list" %></div>
+<div class="tab-container">
+  <div class="tab-wrap">
+    <input id="TAB02-01" type="radio" name="TAB02" class="tab-switch" checked="checked" /><label class="tab-label" for="TAB02-01">訪問履歴</label>
+    <div class="tab-content">
+      <%= render "shared/visit_list" %>
     </div>
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-  </div>
 
-<% end %>
+    <input id="TAB02-02" type="radio" name="TAB02" class="tab-switch" /><label class="tab-label" for="TAB02-02">見積り履歴</label>
+    <div class="tab-content">
+      <%= render "shared/call_list" %>
+    </div>
+  </div>
+</div>
