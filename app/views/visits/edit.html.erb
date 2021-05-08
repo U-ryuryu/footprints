@@ -39,7 +39,7 @@
 
     <div class="button_box">
       <%= f.submit "登録", class: "submit" %>
-      <%= link_to "キャンセル", client_path(params[:client_id]), class: "cancel" %>
+      <%= link_to "キャンセル", client_visit_path, class: "cancel" %>
       <%= link_to "削除", client_visit_path(@visit.id), data: { confirm: "本当に削除しますか？" }, class: "delete", method: :delete %>
     </div>
   <% end %>
