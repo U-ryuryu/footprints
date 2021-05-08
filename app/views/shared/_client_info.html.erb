@@ -9,7 +9,6 @@
         <div class="text"><%= "担当者名 : #{@client.charge}" unless @client.charge.blank? %></div>
         <div class="text"><%= "担当者TEL : #{@client.charge_tel}" unless @client.charge_tel.blank? %></div>
         <%= link_to "顧客情報編集", edit_client_path(@client.id), class: "link" %>
-        <%= link_to 'もどる', root_path, class: "back_btn" %>
       </div>
     </div>
   </div>

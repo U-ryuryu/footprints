@@ -1,13 +1,13 @@
 .client_top {
   width: 100vw;
   height: 30vh;
-  min-height: 180px;
+  min-height: 185px;
   overflow: scroll;
   border-bottom: 2px dotted black;
 }
 
 .client_top .name {
-  font-size: 20px;
+  font-size: 18px;
   text-align: center;
 }
 
@@ -24,7 +24,7 @@
 .client_top .info .info_box {
   width: 30%;
   height: 140px;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .client_top .info .info_box .link {
@@ -44,20 +44,5 @@
           box-shadow: none;
   -webkit-transform: translate(1px, 1px);
           transform: translate(1px, 1px);
-}
-
-.client_top .info .info_box .back_btn {
-  background-color: white;
-  color: orange;
-  text-align: center;
-  font-size: 13px;
-  font-weight: 600;
-  height: 30px;
-  padding: 3px 15px;
-  margin: 10px 0 0 20px;
-  border: 2px solid orange;
-  border-radius: 16px;
-  cursor: pointer;
-  text-decoration: none;
 }
 /*# sourceMappingURL=top.css.map */

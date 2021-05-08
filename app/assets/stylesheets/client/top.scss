@@ -1,13 +1,11 @@
-$cOrange: orange;
-
 .client_top {
   width: 100vw;
   height: 30vh;
-  min-height: 180px;
+  min-height: 185px;
   overflow: scroll;
   border-bottom: 2px dotted black;
   & .name {
-    font-size: 20px;
+    font-size: 18px;
     text-align: center;
   }
   & .info {
@@ -18,7 +16,7 @@ $cOrange: orange;
     & .info_box {
       width: 30%;
       height: 140px;
-      font-size: 18px;
+      font-size: 17px;
       
       & .link {
         background-color: white;
@@ -33,20 +31,6 @@ $cOrange: orange;
           box-shadow: none;
           transform: translate(1px,1px);
         }
-      }
-      & .back_btn {
-        background-color: white;
-        color: $cOrange;
-        text-align: center;
-        font-size: 13px;
-        font-weight: 600;
-        height: 30px;
-        padding: 3px 15px;
-        margin: 10px 0 0 20px;
-        border: 2px solid $cOrange;
-        border-radius: 16px;
-        cursor: pointer;
-        text-decoration: none;
       }
     }
   }

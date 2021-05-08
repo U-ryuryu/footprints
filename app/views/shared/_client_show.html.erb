@@ -1,13 +1,12 @@
 <% if user_signed_in? %>
 
   <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><%= render "shared/visit_list" %></div>
-        <div class="swiper-slide"><%= render "shared/call_list" %></div>
-      </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><%= render "shared/visit_list" %></div>
+      <div class="swiper-slide"><%= render "shared/call_list" %></div>
     </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
 
 <% end %>
