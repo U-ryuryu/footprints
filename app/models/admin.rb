@@ -3,9 +3,9 @@ class Admin < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :users,         dependent: :destroy
-  has_many :clients,       dependent: :destroy
-  has_one_attached :image, dependent: :destroy
+  has_many :users,          dependent: :destroy
+  has_many :clients,        dependent: :destroy
+  has_one_attached :image,  dependent: :destroy
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
 
