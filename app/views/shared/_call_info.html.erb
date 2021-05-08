@@ -1,0 +1,15 @@
+<% if user_signed_in? %>
+  <div class="content_top">
+    <div class="name"><%= "#{@call.client.name}"%></div>
+    <div class="info">
+      <div class="info_box">
+        <div class="text title"><%= "＜#{@call.title}＞"%></div>
+        <div class="text date"><%= "訪問日：#{@call.date.strftime("%y年%-m月%-d日%-H:%M")}"%></div>
+        <div class="text">訪問内容</div>
+        <div class="text content"><%= @call.content %></div>
+        <div class="text status"><%= "状況：#{Status.find(@call.status_id).name}" %></div>
+        <%= link_to "訪問情報編集", edit_client_call_path, class: "link" %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -1,3 +1,7 @@
+<%= render "shared/header" %>
+<%= render "shared/call_info" %>
+<%= render "shared/call_comment" %>
+
 <h1>問合せ情報詳細ページ</h1>
 タイトル：<%= @call.title %><br>
 問合せ日：<%= @call.date.strftime("%y年%-m月%-d日%-H:%M") %><br>
