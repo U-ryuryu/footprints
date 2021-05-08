@@ -1,7 +1,7 @@
 class ClientsController < ApplicationController
   before_action :redirect_user, only: [:show,:edit,:update,:destroy]
   def index
-      @client = Client.where(admin_id: current_user.admin.id).order(updated_at: "DESC").includes(:admin)
+      @client = Client.where(admin_id: current_user.admin.id).order(updated_at: "DESC")
   end
 
   def show
