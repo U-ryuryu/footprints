@@ -30,7 +30,7 @@ RSpec.describe Client, type: :model do
       it 'nameが空では登録できないこと' do
         @client.name = ''
         @client.valid?
-        expect(@client.errors.full_messages).to include("客先名を入力してください")
+        expect(@client.errors.full_messages).to include("顧客名を入力してください")
       end
       it 'telが空では登録できないこと' do
         @client.tel = ''
