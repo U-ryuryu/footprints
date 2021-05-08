@@ -1,6 +1,5 @@
 class VisitsController < ApplicationController
   before_action :redirect_user
-  before_action :redirect_admin, only: [:new, :create, :edit, :update, :destroy]
   before_action :redirect_current_user, only: [:edit, :update, :destroy]
   def new
     @visit = Visit.new
@@ -46,17 +45,11 @@ class VisitsController < ApplicationController
   end
 
   def redirect_user
-    if admin_signed_in?
-      redirect_to root_path and return unless current_admin.id == Client.find(params[:client_id]).admin.id
-    elsif user_signed_in?
+    if user_signed_in?
       redirect_to root_path and return unless current_user.admin.id == Client.find(params[:client_id]).admin.id
     else
       redirect_to root_path
     end
-  end
-
-  def redirect_admin
-    redirect_to root_path and return unless user_signed_in?
   end
 
   def redirect_current_user

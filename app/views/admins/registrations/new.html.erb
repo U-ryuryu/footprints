@@ -31,9 +31,19 @@
 
     <div class="form">
       <div class="label">
-        <%= f.label :password_confirmation %><br />
+        <%= f.label :password_confirmation %>
       </div>
       <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "field" %>
+    </div>
+
+    <div class="img-upload">
+      <div class="text">
+        プロフィール画像
+      </div>
+      <div class="click-upload">
+          クリックしてファイルをアップロード
+        <%= f.file_field :image, id:"image" %>
+      </div>
     </div>
 
     <div class="button_box">

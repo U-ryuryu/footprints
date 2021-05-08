@@ -1,4 +1,5 @@
 class ClientsController < ApplicationController
+  before_action :redirect_admin, except: :index
   before_action :redirect_user, only: [:show,:edit,:update,:destroy]
   def index
       if user_signed_in?
@@ -44,21 +45,17 @@ class ClientsController < ApplicationController
   private
 
   def client_params
-    if admin_signed_in?
-      params.require(:client).permit(:name, :tel, :postal_code, :address, :charge, :charge_tel).merge(admin_id: current_admin.id)
-    else
-      params.require(:client).permit(:name, :tel, :postal_code, :address, :charge, :charge_tel).merge(admin_id: current_user.admin.id)
-    end
+    params.require(:client).permit(:name, :tel, :postal_code, :address, :charge, :charge_tel).merge(admin_id: current_user.admin.id)
+  end
+
+  def redirect_admin
+    redirect_to root_path unless user_signed_in?
   end
 
   def redirect_user
     @client = Client.find(params[:id])
-    if admin_signed_in?
-      redirect_to root_path if current_admin.id != @client.admin.id
-    elsif user_signed_in?
+    if user_signed_in?
       redirect_to root_path if current_user.admin.id != @client.admin.id
-    else
-      redirect_to root_path
     end
   end
 end
