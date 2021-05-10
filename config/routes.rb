@@ -17,6 +17,9 @@ Rails.application.routes.draw do
   end
   root to: "clients#index"
   resources :clients do
+    collection do
+      get 'search'
+    end
     resources :visits, except: :index do
       resources :visit_comments, only: :create
     end

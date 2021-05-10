@@ -18,5 +18,11 @@
         </div>
       <% end %>
     </div>
+    <div class="search_box">
+      <%= form_with url: search_clients_path, local: true, method: :get, class: "search_form" do |f| %>
+        <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search_input" %>
+        <%= f.submit "検索", class: "search_btn" %>
+      <% end %>
+    </div>
   </div>
 <% end %>
