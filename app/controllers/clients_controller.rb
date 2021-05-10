@@ -7,6 +7,10 @@ class ClientsController < ApplicationController
       end
   end
 
+  def search
+    @client = Client.search(params[:keyword]).where(admin_id: current_user.admin.id).order(updated_at: "DESC").includes(:admin)
+  end
+
   def show
     @visits = Visit.where(client_id: @client.id).order(updated_at: "DESC").includes(:user,:client)
     @calls = Call.where(client_id: @client.id).order(updated_at: "DESC").includes(:user,:client)

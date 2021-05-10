@@ -16,4 +16,11 @@ class Client < ApplicationRecord
 
   validates :postal_code, format: { with: /\A\d{3}-\d{4}\z/, message: 'はハイフン(-)を含む半角数字7桁で入力してください' },if: proc { |client|client.postal_code.present?}
 
+  def self.search(search)
+    if search != ""
+      Client.where("name LIKE(?)", "%#{search}%")
+    else
+      Client.all
+    end
+  end
 end
