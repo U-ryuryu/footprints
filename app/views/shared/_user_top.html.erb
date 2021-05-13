@@ -2,7 +2,7 @@
   <div class="client_list">
     <%= link_to "顧客情報新規登録", new_client_path, class: "client_new_link"%>
     <div class="client_list_top">
-      <div class="name_column">ユーザー情報</div>
+      <div class="name_column">顧客情報</div>
       <div class="update_column">最終更新日</div>
     </div>
     <div class="client_list_box">
@@ -20,7 +20,7 @@
     </div>
     <div class="search_box">
       <%= form_with url: search_clients_path, local: true, method: :get, class: "search_form" do |f| %>
-        <%= f.text_field :keyword, placeholder: "投稿を検索する", class: "search_input" %>
+        <%= f.text_field :keyword, placeholder: "顧客名を検索する", class: "search_input" %>
         <%= f.submit "検索", class: "search_btn" %>
       <% end %>
     </div>

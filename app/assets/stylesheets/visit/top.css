@@ -35,6 +35,10 @@
   font-size: 14px;
 }
 
+.content_top .info .info_box .text.content {
+  text-align: left;
+}
+
 .content_top .info .info_box .link {
   width: 100px;
   text-align: center;
